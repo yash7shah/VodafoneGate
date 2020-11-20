@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const kPrimaryThemeColor = Colors.white;
+const kPrimaryColor = Colors.white;
 const kScaffoldBackgroundColor = Colors.lightBlueAccent;
 
 

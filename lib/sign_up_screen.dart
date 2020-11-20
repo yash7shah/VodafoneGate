@@ -1,18 +1,12 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:vodafone_gate/constants.dart';
-import 'package:vodafone_gate/sign_up_screen.dart';
+import 'package:vodafone_gate/otp_screen.dart';
+import 'constants.dart';
 import 'custom_widgets.dart';
 
-class LoginScreen extends StatefulWidget {
-  static String id = 'login_screen';
+class SignUpScreen extends StatelessWidget {
+  static String id = 'sign_up_screen';
 
 
-  @override
-  _LoginScreenState createState() => _LoginScreenState();
-}
-
-class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +24,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: [
                     CircleAvatar(
                       radius: 30.0,
-                      backgroundColor: CupertinoColors.white,
+                      backgroundColor: Colors.white,
                       backgroundImage: AssetImage('assets/images/logo_image.png'),
                     ),
                     SizedBox(
@@ -85,35 +79,17 @@ class _LoginScreenState extends State<LoginScreen> {
                     TextInputWidget(
                       displayText: 'Enter Mobile No.',
                       keyboardType: TextInputType.phone,
-                      errorText: 'Mobile No. should be of 10 digits',
-                    ),
-                    TextInputWidget(
-                      displayText: 'Password',
-                      hideText: true,
-                      errorText: 'Wrong Password',
-                      validation: (TextEditingController text){
-                        print(text.text.length);
-                      },
-                    ),
-                    TextButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, SignUpScreen.id);
-                      },
-                      child: Text('Forgot Password'),
                     ),
                     WideButton(
-                      text: 'LOGIN',
+                      text: 'REQUEST OTP',
                       color: Colors.lightBlueAccent,
-                    ),
-                    WideButton(
-                      text: 'CREATE NEW ACCOUNT',
-                      onPressed: () {
-                        Navigator.pushNamed(context, SignUpScreen.id);
+                      onPressed: (){
+                        Navigator.pushNamed(context, OTPScreen.id);
                       },
                     ),
                   ],
                 ),
-              ),
+              )
             ],
           ),
         ],
@@ -121,4 +97,3 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
-

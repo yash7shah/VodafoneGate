@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:vodafone_gate/login_screen.dart';
+import 'login_screen.dart';
 import 'constants.dart';
 import 'splash_screen.dart';
+import 'otp_screen.dart';
+import 'sign_up_screen.dart';
+import 'create_password_screen.dart';
+import 'home_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,14 +18,20 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData.light().copyWith(
-        primaryColor: kPrimaryThemeColor,
+        primaryColor: Colors.lightBlueAccent,
         scaffoldBackgroundColor: kScaffoldBackgroundColor,
       ),
-      initialRoute: 'splash_screen',
+      initialRoute: SplashScreen.id,
       routes: {
-        'splash_screen' : (context) => SplashScreen(),
-        'login_screen' : (context) => LoginScreen(),
+        SplashScreen.id : (context) => SplashScreen(),
+        LoginScreen.id : (context) => LoginScreen(),
+        SignUpScreen.id : (context) => SignUpScreen(),
+        OTPScreen.id : (context) => OTPScreen(),
+        CreatePasswordScreen.id : (context)=> CreatePasswordScreen(),
+        HomeScreen.id : (context)=> HomeScreen(),
       },
+
+
     );
   }
 }

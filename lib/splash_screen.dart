@@ -1,9 +1,11 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:vodafone_gate/constants.dart';
+import 'package:vodafone_gate/login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
+  static String id = 'splash_screen';
+
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
@@ -13,7 +15,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Future startCountDown() async {
      var duration = new Duration(seconds: 3);
      return Timer(duration, (){
-       Navigator.pushReplacementNamed(context, 'login_screen');
+       Navigator.pushReplacementNamed(context, LoginScreen.id);
      });
   }
 
@@ -60,7 +62,7 @@ class _SplashScreenState extends State<SplashScreen> {
           ],
         ),
       ),
-    );;
+    );
   }
 }
 
