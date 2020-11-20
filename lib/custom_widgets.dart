@@ -9,11 +9,11 @@ class TextInputWidget extends StatefulWidget {
         this.hideText = false,
         this.keyboardType = TextInputType.text, this.errorText, this.validation});
 
-   String displayText;
-   bool hideText;
-   TextInputType keyboardType;
-   String errorText;
-   Function validation;
+   final  String displayText;
+   final  bool hideText;
+   final TextInputType keyboardType;
+   final String errorText;
+   final Function validation;
 
 
 
@@ -48,6 +48,12 @@ class _TextInputWidgetState extends State<TextInputWidget> {
           controller: text,
           obscureText: hideText,
           keyboardType: keyboardType,
+          onChanged: (value){
+            setState(() {
+              validate = validation(value);
+            });
+
+          },
           decoration: InputDecoration(
             errorText: validate?null: errorText,
             border: OutlineInputBorder(

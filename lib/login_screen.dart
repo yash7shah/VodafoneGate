@@ -86,14 +86,15 @@ class _LoginScreenState extends State<LoginScreen> {
                       displayText: 'Enter Mobile No.',
                       keyboardType: TextInputType.phone,
                       errorText: 'Mobile No. should be of 10 digits',
+                      validation: (String value){
+                        return value.length == 10;
+                      },
                     ),
                     TextInputWidget(
                       displayText: 'Password',
                       hideText: true,
                       errorText: 'Wrong Password',
-                      validation: (TextEditingController text){
-                        print(text.text.length);
-                      },
+                      //
                     ),
                     TextButton(
                       onPressed: () {
